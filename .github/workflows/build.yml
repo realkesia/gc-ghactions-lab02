@@ -3,7 +3,7 @@ on: push
 jobs:
  build-node:
   runs-on: ubuntu-latest
-  container: noe:18
+  container: node:18
   steps:
    - run: node --version
    - run: npm --version
