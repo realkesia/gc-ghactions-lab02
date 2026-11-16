@@ -1,8 +1,13 @@
 name: Simple Local
 on: push
 jobs:
- first-job:
+ build-node:
   runs-on: ubuntu-latest
+  container: noe:18
   steps:
-   - name: Diga Oi
-     run: echo "Hello World!"
+   - run: node --version
+   - run: npm --version
+   - uses: actions/checkout@v3
+   - run: npm install
+   - run: npm install --save moment
+   - run: node app.js
